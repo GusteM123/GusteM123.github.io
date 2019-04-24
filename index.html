@@ -101,11 +101,16 @@
 	
       console.log(`Element: ${element}, Row: ${row}, col: ${col}`);
       // Pabaigti. (Vietoj doges turetu but X arba O) hehe
-      if (xturn == true){
+	if (state [row][col]==='-'){
+	if (xturn === true){
 	element.innerHTML = "x";
+	state [row][col]="x";
 	}
 	else {
-	element.innerHTML = "0";}
+	element.innerHTML = "0";
+	state [row][col]="0";
+	}
+	}
 	xturn =! xturn;
       document.getElementById("turnIndicator").innerHTML = xturn;
       checkForWin();

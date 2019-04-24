@@ -97,11 +97,12 @@
     const state = [['-', '-', '-'],
                    ['-', '-', '-'],
                    ['-', '-', '-']];
+	let sum=0;
     function move(element, row, col) {
 	
       console.log(`Element: ${element}, Row: ${row}, col: ${col}`);
-      // Pabaigti. (Vietoj doges turetu but X arba O) hehe
 	if (state [row][col]==='-'){
+	sum=sum+1;
 	if (xturn === true){
 	element.innerHTML = "x";
 	state [row][col]="x";
@@ -116,7 +117,29 @@
       checkForWin();
     }
     function checkForWin() {
-      // Pabaigti;
-    }
+	for (let i=0; i<3; i++){
+	if (state[i][0]==="x" && state[i][1]==="x" && state[i][2]==="x" ||state[0][i]==="x" && state[1][i]==="x" && state[2][i]==="x"){
+	document.getElementById("turnIndicator").innerHTML = "x wins";
+	}
+	if (state[0][0]==="x" && state[1][1]==="x" && state[2][2]==="x"){
+	document.getElementById("turnIndicator").innerHTML = "x wins";
+	}
+	if (state[0][2]==="x" && state[1][1]==="x" && state[2][0]==="x"){
+	document.getElementById("turnIndicator").innerHTML = "x wins";
+	}
+	if (state[i][0]==="0" && state[i][1]==="0" && state[i][2]==="0" ||state[0][i]==="0" && state[1][i]==="0" && state[2][i]==="0"){
+	document.getElementById("turnIndicator").innerHTML = "0 wins";
+	}
+	if (state[0][0]==="0" && state[1][1]==="0" && state[2][2]==="0"){
+	document.getElementById("turnIndicator").innerHTML = "0 wins";
+	}
+	if (state[0][2]==="0" && state[1][1]==="0" && state[2][0]==="0"){
+	document.getElementById("turnIndicator").innerHTML = "0 wins";
+	}}
+	if (sum===9){
+	document.getElementById("turnIndicator").innerHTML = "draw";
+	}
+	}
+	
   </script>
 </html>

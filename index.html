@@ -101,8 +101,8 @@
       console.log(`Element: ${element}, Row: ${row}, col: ${col}`);
       // Pabaigti. (Vietoj doges turetu but X arba O) hehe
       element.innerHTML = "<img src='doge.jpg'/>";
-
-      document.getElementById("turnIndicator").innerHTML = "??";
+	xturn =! xturn;
+      document.getElementById("turnIndicator").innerHTML = xturn;
       checkForWin();
     }
     function checkForWin() {

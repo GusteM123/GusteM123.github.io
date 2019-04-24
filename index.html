@@ -98,9 +98,14 @@
                    ['-', '-', '-'],
                    ['-', '-', '-']];
     function move(element, row, col) {
+	
       console.log(`Element: ${element}, Row: ${row}, col: ${col}`);
       // Pabaigti. (Vietoj doges turetu but X arba O) hehe
-      element.innerHTML = "<img src='doge.jpg'/>";
+      if (xturn == true){
+	element.innerHTML = "x";
+	}
+	else {
+	element.innerHTML = "0";}
 	xturn =! xturn;
       document.getElementById("turnIndicator").innerHTML = xturn;
       checkForWin();
